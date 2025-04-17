@@ -1,18 +1,22 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
 body {
     font-family: Arial, sans-serif;
     background: linear-gradient(135deg, #F8F8F8 0%, #7bd9fc 100%);
     color: #333;
-    margin: 0;
-    padding: 0;
     line-height: 1.6;
 }
 
 footer {
-    text-align: center;
-    padding: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+    height: 20vh; 
+    margin-top: 20px; 
     background: linear-gradient(135deg, #7bd9fc 0%, #87AFC7 100%);
-    color: #333;
-    margin-top: 20px;
 }
 
 section {
@@ -43,4 +47,8 @@ ol {
 
 li {
     margin: 10px 0;
+}
+
+span {
+    
 }

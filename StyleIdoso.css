@@ -1,0 +1,46 @@
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #F8F8F8 0%, #7bd9fc 100%);
+    color: #333;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+}
+
+footer {
+    text-align: center;
+    padding: 15px;
+    background: linear-gradient(135deg, #7bd9fc 0%, #87AFC7 100%);
+    color: #333;
+    margin-top: 20px;
+}
+
+section {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    text-align: center;
+    background: linear-gradient(135deg, #F8F8F8 0%, #D3E0DC 100%);
+    border-radius: 10px;
+}
+
+video {
+    display: block;
+    margin: 0 auto 20px;
+    max-width: 100%;
+    height: auto;
+    background: linear-gradient(135deg, #7bd9fc 0%, #D3E0DC 100%);
+    border-radius: 10px; 
+}
+
+ol {
+    padding-left: 0;
+    list-style-position: inside;
+    text-align: center;
+    background: linear-gradient(135deg, #E6E6FA 0%, #7bd9fc 100%);
+    border-radius: 10px;
+}
+
+li {
+    margin: 10px 0;
+}

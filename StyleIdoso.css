@@ -4,10 +4,11 @@
 }
 
 body {
-    font-family: Arial, sans-serif;
+    font-family: Verdana, Arial, sans-serif;
     background: linear-gradient(135deg, #F8F8F8 0%, #7bd9fc 100%);
-    color: #333;
+    color: black;
     line-height: 1.6;
+    
 }
 
 footer {
@@ -49,6 +50,3 @@ li {
     margin: 10px 0;
 }
 
-span {
-    
-}

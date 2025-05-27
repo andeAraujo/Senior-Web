@@ -1,0 +1,79 @@
+* {
+  box-sizing: border-box;
+  font-family: 'Nunito', sans-serif;
+  font-weight: bold;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(135deg, #F8F8F8 0%, #7bd9fc 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+.container {
+  background-color: white;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  max-width: 500px;
+  width: 100%;
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.mensagem-inicial {
+  background-color: #f2fbff;
+  padding: 15px;
+  border-left: 5px solid #3faeea;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  color: #333;
+  font-size: 15px;
+  line-height: 1.6;
+  font-size: 20px;
+}
+
+form label {
+  display: block;
+  margin-top: 10px;
+  font-weight: bold;
+}
+
+form input,
+form textarea {
+  width: 100%;
+  padding: 10px;
+  margin-top: 5px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+form button {
+  margin-top: 15px;
+  width: 100%;
+  padding: 10px;
+  background-color: #3faeea;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+form button:hover {
+  background-color: #349ccf;
+}
+
+#status {
+  text-align: center;
+  margin-top: 15px;
+  font-weight: bold;
+}

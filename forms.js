@@ -10,7 +10,9 @@ document.getElementById("form-contato").addEventListener("submit", function (e) 
     return;
   }
 
+
   // Simulação de enviar a mensagem 
+
 
   document.getElementById("status").textContent = "Mensagem enviada com sucesso!";
   document.getElementById("form-contato").reset();

@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tutorial: Funções Básicas do Celular para Iniciantes - Sênior Web</title>
+  <meta name="description" content="Aprenda de forma fácil como fazer ligações, enviar mensagens, ajustar volume e brilho, usar o modo silencioso e atualizar aplicativos no seu celular.">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/pages/_tutorial.css">
+</head>
+
+<body>
+  <!-- Controles de acessibilidade -->
+  <div class="accessibility-controls" aria-label="Controles de acessibilidade">
+    <button class="accessibility-btn" id="increaseFont" aria-label="Aumentar tamanho da fonte">
+      <i class="bi bi-zoom-in"></i>
+    </button>
+    <button class="accessibility-btn" id="decreaseFont" aria-label="Diminuir tamanho da fonte">
+      <i class="bi bi-zoom-out"></i>
+    </button>
+    <button class="accessibility-btn" id="highContrast" aria-label="Alternar alto contraste">
+      <i class="bi bi-brightness-high"></i>
+    </button>
+    <button class="accessibility-btn" id="resetAccessibility" aria-label="Redefinir configurações de acessibilidade">
+      <i class="bi bi-arrow-counterclockwise"></i>
+    </button>
+  </div>
+
+  <!-- Link para pular navegação -->
+  <a href="#main-content" class="skip-link">Pular para conteúdo principal</a>
+
+  <header>
+    <div class="logo">
+      <i class="bi bi-laptop logo-icon" aria-hidden="true"></i>
+      <span>Sênior Web</span>
+    </div>
+    <nav aria-label="Navegação principal">
+      <a href="../index.html">Início</a>
+      <a href="../index.html#tutoriais" class="tutoriais-link">Tutoriais</a>
+      <a href="../tutorials/dicas-rapidas.html">Dicas Rápidas</a>
+      <a href="https://www.youtube.com/@S%C3%AAniorWeb1" target="_blank">YouTube</a>
+    </nav>
+  </header>
+
+  <main id="main-content">
+    <div class="container">
+      <!-- Migalhas de pão -->
+      <nav aria-label="Navegação estrutural" class="breadcrumb">
+        <ol class="breadcrumb-list" style="list-style: none; display: flex; gap: 0.5rem; margin: 0; padding: 0;">
+          <li><a href="../index.html">Início</a></li>
+          <li aria-hidden="true">/</li>
+          <li><a href="../index.html#tutoriais" class="tutoriais-link">Tutoriais</a></li>
+          <li aria-hidden="true">/</li>
+          <li aria-current="page">Funções Básicas do Celular</li>
+        </ol>
+      </nav>
+
+      <!-- Cabeçalho do tutorial -->
+      <div class="tutorial-header">
+        <h1 class="tutorial-title">Dominando o Celular: Funções Básicas para o Dia a Dia</h1>
+        <div class="tutorial-meta">
+          <div class="tutorial-meta-item">
+            <i class="bi bi-clock"></i>
+            <span>Tempo estimado: 10 minutos</span>
+          </div>
+          <div class="tutorial-meta-item">
+            <i class="bi bi-calendar"></i>
+            <span>Atualizado em: 20/05/2025</span>
+          </div>
+          <div class="tutorial-meta-item">
+            <i class="bi bi-bar-chart"></i>
+            <span>Dificuldade: Muito Fácil</span>
+          </div>
+        </div>
+        <p>Seu celular pode ser um grande amigo! Aprenda aqui, de forma simples, como usar as funções mais importantes para se comunicar e aproveitar melhor o seu aparelho.</p>
+      </div>
+
+      <!-- Player de vídeo (Opcional, se houver um vídeo específico para este tutorial) -->
+      <div class="video-container">
+        <iframe src="https://www.youtube.com/embed/D5fdqZGOrAU?si=Ahe6rGbXzxbxyHko" 
+                title="Tutorial em vídeo: Funções básicas do celular" 
+                frameborder="0" 
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                allowfullscreen
+                aria-label="Vídeo tutorial sobre funções básicas do celular"></iframe>
+      </div>
+
+      <!-- Conteúdo textual do tutorial -->
+      <div class="content-card">
+        <h2>Passo a Passo Completo</h2>
+        
+        <div class="step">
+          <div class="step-number" aria-hidden="true">1</div>
+          <div class="step-content">
+            <h3><i class="bi bi-telephone-fill me-2"></i>Fazer e Receber Ligações</h3>
+            <p>Falar com as pessoas pelo celular é uma das coisas mais importantes. Veja como é fácil:</p>
+            <p><strong>Para fazer uma ligação:</strong></p>
+            <ol>
+              <li>Procure o ícone do telefone no seu celular. Geralmente é verde e parece um telefone antigo (<i class="bi bi-telephone-fill"></i>). Toque nele.</li>
+              <li>Pode aparecer uma lista dos seus contatos ou um teclado numérico. Se aparecer o teclado, digite o número da pessoa para quem você quer ligar. Se aparecerem seus contatos, você pode procurar o nome da pessoa e tocar nele.</li>
+              <li>Depois de digitar o número ou escolher o contato, toque no botão verde (geralmente com um desenho de telefone) para começar a chamar.</li>
+            </ol>
+            <p><strong>Para atender uma ligação quando o celular tocar:</strong></p>
+            <ul>
+              <li>Quando alguém te ligar, a tela do celular vai acender e mostrar quem está ligando (se o número estiver salvo nos seus contatos).</li>
+              <li>Para atender, procure um botão verde (às vezes com um telefone) e deslize o dedo sobre ele para cima ou para o lado, ou apenas toque nele. Cada celular pode ser um pouquinho diferente, mas geralmente é deslizar o botão verde.</li>
+            </ul>
+            <img src="../assets/images/celular-tela-ligacao.png" alt="Tela de um celular mostrando como fazer ou receber uma ligação." class="step-image">
+          </div>
+        </div>
+        
+        <div class="step">
+          <div class="step-number" aria-hidden="true">2</div>
+          <div class="step-content">
+            <h3><i class="bi bi-chat-dots-fill me-2"></i>Enviar e Ler Mensagens de Texto (SMS)</h3>
+            <p>Mandar uma mensagem escrita, um "torpedo", também é simples:</p>
+            <ol>
+              <li>Procure o ícone de mensagens. Pode ser um balãozinho de conversa (<i class="bi bi-chat-dots-fill"></i> ou <i class="bi bi-chat-text-fill"></i>). Toque nele.</li>
+              <li>Para começar uma nova mensagem, procure um botão com um sinal de "+" ou um desenho de um lápis escrevendo. Toque nele.</li>
+              <li>Escolha para quem você quer mandar a mensagem: selecione o nome da pessoa na sua lista de contatos ou digite o número do celular dela no campo indicado (geralmente "Para:").</li>
+              <li>No campo de texto na parte de baixo da tela (onde diz algo como "Digite sua mensagem"), escreva o que você quer dizer.</li>
+              <li>Quando terminar de escrever, toque no botão de enviar (pode ser uma seta <i class="bi bi-send-fill"></i> ou a palavra "Enviar").</li>
+            </ol>
+            <p>Para ler mensagens que você recebeu, é só tocar no ícone de mensagens e depois na conversa da pessoa que te mandou a mensagem.</p>
+            <img src="../assets/images/celular-tela-mensagem.png" alt="Tela de um celular mostrando como enviar uma mensagem de texto." class="step-image">
+          </div>
+        </div>
+
+        <div class="tips-card">
+          <h3><i class="bi bi-lightbulb-fill me-2"></i>WhatsApp: Outra forma de se comunicar!</h3>
+          <p>Muitas pessoas usam o WhatsApp (<i class="bi bi-whatsapp"></i>) para mandar mensagens, fotos, vídeos e até fazer ligações de graça pela internet. Se você e seus contatos tiverem Wi-Fi ou internet no celular, pode ser uma ótima opção! Temos um tutorial sobre como usar o WhatsApp também.</p>
+        </div>
+        
+        <div class="step">
+          <div class="step-number" aria-hidden="true">3</div>
+          <div class="step-content">
+            <h3><i class="bi bi-volume-up-fill me-2"></i><i class="bi bi-brightness-high-fill ms-2"></i>Ajustar o Volume do Som e o Brilho da Tela</h3>
+            <p>Deixar o celular do seu jeito é importante para o conforto dos seus ouvidos e olhos.</p>
+            <p><strong>Para ajustar o volume do som (toque, músicas, vídeos):</strong></p>
+            <ul>
+              <li>Na lateral do seu celular, você geralmente encontra dois botões, um pertinho do outro. Um deles aumenta o volume ( <i class="bi bi-volume-up-fill"></i> ) e o outro diminui ( <i class="bi bi-volume-down-fill"></i> ).</li>
+              <li>Aperte o botão de cima para deixar o som mais alto.</li>
+              <li>Aperte o botão de baixo para deixar o som mais baixo.</li>
+            </ul>
+            <p><strong>Para ajustar o brilho da tela (deixar mais clara ou mais escura):</strong></p>
+            <ul>
+              <li>Com cuidado, deslize o dedo de cima para baixo na tela do celular, começando bem do topo. Isso vai abrir um painel com várias opções rápidas.</li>
+              <li>Nesse painel, procure por uma barrinha com um desenho de sol (<i class="bi bi-brightness-high-fill"></i>) ou a palavra "Brilho".</li>
+              <li>Deslize o dedo sobre essa barrinha para a direita (para mais brilho) ou para a esquerda (para menos brilho), até ficar confortável para seus olhos.</li>
+            </ul>
+            <img src="../assets/images/celular-controle-rapido.png" alt="Tela de um celular mostrando os controles rápidos de volume e brilho." class="step-image">
+          </div>
+        </div>
+
+        <div class="step">
+          <div class="step-number" aria-hidden="true">4</div>
+          <div class="step-content">
+            <h3><i class="bi bi-bell-slash-fill me-2"></i>Ativar e Desativar o Modo Silencioso</h3>
+            <p>Precisa que o celular não faça barulho em um lugar específico, como no médico, na igreja ou durante o sono? Use o modo silencioso!</p>
+            <ol>
+              <li>Deslize o dedo de cima para baixo na tela do celular para abrir o painel de controles rápidos (o mesmo que você usou para o brilho).</li>
+              <li>Procure por um ícone de um sino (<i class="bi bi-bell-fill"></i>) ou a palavra "Som", "Toque" ou "Normal".</li>
+              <li>Toque nesse ícone. Ele pode mudar para:
+                <ul>
+                  <li>Um sino cortado (<i class="bi bi-bell-slash-fill"></i>) ou a palavra "Silencioso": o celular não vai tocar nem vibrar.</li>
+                  <li>Um ícone de vibração (<i class="bi bi-vibrate-fill"></i>) ou a palavra "Vibrar": o celular não vai tocar, mas vai vibrar quando chegar algo.</li>
+                </ul>
+              </li>
+              <li>Para o celular voltar a tocar normalmente, faça o mesmo caminho e toque no ícone novamente até ele mostrar o sino sem o corte (<i class="bi bi-bell-fill"></i>) ou a palavra "Som" ou "Normal".</li>
+            </ol>
+            <p><strong>Atenção:</strong> Se o seu celular parou de tocar quando alguém liga, verifique primeiro se ele não está no modo silencioso por engano!</p>
+          </div>
+        </div>
+        
+        <div class="step">
+          <div class="step-number" aria-hidden="true">5</div>
+          <div class="step-content">
+            <h3><i class="bi bi-arrow-repeat me-2"></i>Entendendo as Atualizações de Aplicativos (Apps)</h3>
+            <p>De vez em quando, os programinhas do seu celular (chamados de aplicativos ou "apps", como o WhatsApp, Facebook, app do banco) precisam ser "atualizados". Imagine que é como levar o carro para uma revisão: serve para consertar coisinhas, melhorar o funcionamento e deixar mais seguro.</p>
+            <ul>
+              <li>Seu celular pode mostrar uma mensagem na tela ou um aviso na loja de aplicativos (Play Store <img src="../assets/images/play-store-icon.png" alt="Ícone Play Store" style="height:1.2em; vertical-align:middle;"> ou App Store <img src="../assets/images/app-store-icon.png" alt="Ícone App Store" style="height:1.2em; vertical-align:middle;">) dizendo que "há atualizações disponíveis".</li>
+              <li>Geralmente, aparece um botão escrito "<strong>Atualizar</strong>", "<strong>Atualizar Tudo</strong>" ou "<strong>Instalar agora</strong>".</li>
+              <li>É seguro tocar nesses botões para atualizar. O ideal é fazer isso quando estiver conectado numa rede Wi-Fi, para não gastar os dados do seu plano de celular.</li>
+              <li>O celular vai baixar e instalar as novidades sozinho. Pode demorar um pouquinho.</li>
+            </ul>
+            <p>Manter os aplicativos atualizados ajuda eles a funcionarem direitinho e te protege mais contra problemas de segurança.</p>
+            <img src="../assets/images/celular-tela-atualizacao.png" alt="Tela de um celular mostrando um exemplo de notificação de atualização de aplicativo." class="step-image">
+          </div>
+        </div>
+
+        <div class="tips-card">
+          <h3><i class="bi bi-question-circle-fill me-2"></i>Lembre-se: A Prática Leva à Perfeição!</h3>
+          <p>O celular tem muitas funções, mas você não precisa aprender tudo de uma vez só. Comece com estas dicas básicas e vá praticando. Se algo não der certo ou se você ficar com alguma dúvida, não hesite em pedir ajuda a um familiar, amigo ou vizinho que entenda um pouco mais. O importante é se sentir cada vez mais à vontade e seguro para usar seu aparelho!</p>
+        </div>
+
+      </div>
+      
+      <!-- Tutorials relacionados (Mantendo os links originais que você pediu para não modificar) -->
+      <div class="related-tutorials">
+        <h2>Você também pode gostar</h2>
+        
+        <a href="../tutorials/tutorial-dicas-redes-sociais.html" class="related-card">
+          <i class="bi bi-people-fill related-icon"></i>
+          <div>
+            <h3>Dicas para redes sociais</h3>
+            <p>Dicas simples para interagir e se proteger</p>
+          </div>
+        </a>
+        
+        <a href="../tutorials/tutorial-como-navegar-com-seguranca.html" class="related-card">
+          <i class="bi bi-shield-lock-fill related-icon"></i>
+          <div>
+            <h3>Como navegar com segurança</h3>
+            <p>Proteja-se contra fraudes na internet</p>
+          </div>
+        </a>
+        
+        <a href="../tutorials/tutorial-whatsapp.html" class="related-card">
+          <i class="bi bi-whatsapp related-icon"></i>
+          <div>
+            <h3>Como usar o WhatsApp para conversar com familiares</h3>
+            <p>Tudo sobre mensagens, chamadas e videochamadas</p>
+          </div>
+        </a>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-4">
+          <div class="logo mb-3">
+            <i class="bi bi-laptop logo-icon" aria-hidden="true"></i>
+            <span style="color: white;">Sênior Web</span>
+          </div>
+          <p style="color: #cbd5e1;">Empoderando pessoas através do conhecimento tecnológico.</p>
+          <div class="social-icons">
+            <a href="https://www.facebook.com/share/16Gdpi9rQ8/" target="_blank" class="social-icon" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+            <a href="https://www.youtube.com/@S%C3%AAniorWeb1" target="_blank" class="social-icon" aria-label="YouTube"><i class="bi bi-youtube"></i></a>
+            <a href="https://www.instagram.com/seniorweb202/" target="_blank" class="social-icon" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+          </div>
+        </div>
+        <div class="col-md-2">
+          <div class="footer-links">
+            <h4>Links</h4>
+            <a href="../index.html">Início</a>
+            <a href="../index.html#tutoriais">Tutoriais</a>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="footer-links">
+            <h4>Contato</h4>
+            <address>
+            Manaus, AM - Brasil<br>
+            </address>
+            <a href="mailto:contato@senior.web"><i class="bi bi-envelope me-2"></i> seniorweb2025@gmail.com</a>
+          </div>
+        </div>
+      </div>
+      <div class="copyright">
+        <p>© 2025 Sênior Web. Todos os direitos reservados.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    // Controles de acessibilidade (igual à página principal)
+    document.getElementById('increaseFont').addEventListener('click', function() {
+      const root = document.documentElement;
+      let currentSize = parseFloat(getComputedStyle(root).fontSize);
+      root.style.fontSize = (currentSize + 1) + 'px';
+    });
+
+    document.getElementById('decreaseFont').addEventListener('click', function() {
+      const root = document.documentElement;
+      let currentSize = parseFloat(getComputedStyle(root).fontSize);
+      if (currentSize > 14) { // Limite mínimo para não ficar ilegível
+        root.style.fontSize = (currentSize - 1) + 'px';
+      }
+    });
+
+    document.getElementById('highContrast').addEventListener('click', function() {
+      document.body.classList.toggle('high-contrast');
+    });
+
+    document.getElementById('resetAccessibility').addEventListener('click', function() {
+      document.documentElement.style.fontSize = '16px'; // Reset para o valor padrão do Bootstrap/navegador
+      document.body.classList.remove('high-contrast');
+    });
+
+    // Foco visível para elementos interativos
+    document.addEventListener('keyup', function(e) {
+      if (e.key === 'Tab') {
+        const focusedElement = document.activeElement;
+        if (focusedElement.classList.contains('related-card')) {
+          focusedElement.style.outline = '2px dashed var(--primary-color)';
+        }
+      }
+    });
+    // Adicionado para remover o outline ao perder o foco (blur)
+     document.addEventListener('blur', function(e) {
+        if (e.target.classList && e.target.classList.contains('related-card')) {
+            e.target.style.outline = 'none';
+        }
+    }, true);
+
+
+    // Adiciona aria-live para feedback de acessibilidade
+    const liveRegion = document.createElement('div');
+    liveRegion.setAttribute('aria-live', 'polite');
+    liveRegion.setAttribute('aria-atomic', 'true');
+    liveRegion.style.position = 'absolute';
+    liveRegion.style.left = '-9999px';
+    document.body.appendChild(liveRegion);
+
+    document.querySelectorAll('.accessibility-btn').forEach(button => { // Selecionador corrigido
+      button.addEventListener('click', function() {
+        const action = this.getAttribute('aria-label');
+        liveRegion.textContent = `Ação executada: ${action}`;
+        setTimeout(() => { // Adicionado para limpar a mensagem, como na página de Dicas Rápidas
+          liveRegion.textContent = '';
+        }, 1000);
+      });
+    });
+
+    // Controle do player de vídeo para acessibilidade
+    const videoIframe = document.querySelector('.video-container iframe');
+    if (videoIframe) {
+      // O title do iframe deve ser definido no HTML com o título real do vídeo.
+      // Ex: videoIframe.setAttribute('title', 'Tutorial em vídeo: Funções básicas do celular');
+    }
+  </script>
+</body>
+
+</html>

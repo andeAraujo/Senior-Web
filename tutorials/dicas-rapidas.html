@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dicas Rápidas de Tecnologia para Iniciantes - Sênior Web</title>
+  <meta name="description" content="Dicas simples e úteis para facilitar seu dia a dia com a tecnologia. Aprenda truques rápidos para celular, computador e internet.">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/pages/_tutorial.css">
+  <style>
+
+    .dica-card {
+      background-color: white;
+      border-radius: 12px;
+      padding: 1.5rem 2rem; /* Ajustado para mais preenchimento interno */
+      margin-bottom: 1.5rem;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.07); /* Sombra um pouco mais pronunciada */
+      border-left: 5px solid var(--secondary-color); /* Destaque lateral */
+    }
+
+    .dica-card h3 {
+      color: var(--primary-color);
+      margin-top: 0;
+      margin-bottom: 0.75rem;
+      font-size: 1.3rem; /* Tamanho do título da dica */
+    }
+    .dica-card p {
+      margin-bottom: 0.5rem; /* Menos espaço abaixo dos parágrafos dentro da dica */
+      font-size: 1.05rem; /* Texto da dica um pouco maior */
+    }
+    .dica-card ul {
+      padding-left: 20px;
+      margin-bottom: 0.5rem;
+    }
+    .dica-card li {
+      margin-bottom: 0.25rem;
+    }
+    .page-header { 
+      background-color: white;
+      border-radius: 12px;
+      padding: 2rem;
+      margin-bottom: 2rem;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+      text-align: center;
+    }
+    .page-header h1 {
+      color: var(--primary-color);
+      margin-bottom: 0.5rem;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Controles de acessibilidade -->
+  <div class="accessibility-controls" aria-label="Controles de acessibilidade">
+    <button class="accessibility-btn" id="increaseFont" aria-label="Aumentar tamanho da fonte">
+      <i class="bi bi-zoom-in"></i>
+    </button>
+    <button class="accessibility-btn" id="decreaseFont" aria-label="Diminuir tamanho da fonte">
+      <i class="bi bi-zoom-out"></i>
+    </button>
+    <button class="accessibility-btn" id="highContrast" aria-label="Alternar alto contraste">
+      <i class="bi bi-brightness-high"></i>
+    </button>
+    <button class="accessibility-btn" id="resetAccessibility" aria-label="Redefinir configurações de acessibilidade">
+      <i class="bi bi-arrow-counterclockwise"></i>
+    </button>
+  </div>
+
+  <!-- Link para pular navegação -->
+  <a href="#main-content" class="skip-link">Pular para conteúdo principal</a>
+
+  <header>
+    <div class="logo">
+      <i class="bi bi-laptop logo-icon" aria-hidden="true"></i>
+      <span>Sênior Web</span>
+    </div>
+    <nav aria-label="Navegação principal">
+      <a href="../index.html">Início</a>
+      <a href="../index.html#tutoriais" class="tutoriais-link">Tutoriais</a>
+      <a href="#" class="active">Dicas Rápidas</a>
+      <a href="https://www.youtube.com/@S%C3%AAniorWeb1" target="_blank">YouTube</a>
+    </nav>
+  </header>
+
+  <main id="main-content">
+    <div class="container">
+      <!-- Migalhas de pão -->
+      <nav aria-label="Navegação estrutural" class="breadcrumb">
+        <ol class="breadcrumb-list" style="list-style: none; display: flex; gap: 0.5rem; margin: 0; padding: 0;">
+          <li><a href="../index.html">Início</a></li>
+          <li aria-hidden="true">/</li>
+          <li aria-current="page">Dicas Rápidas</li>
+        </ol>
+      </nav>
+
+      <!-- Cabeçalho da Página -->
+      <div class="page-header">
+        <h1><i class="bi bi-lightbulb-fill me-2"></i>Dicas Rápidas para Facilitar seu Dia a Dia</h1>
+        <p class="lead">Pequenos truques e conselhos para você usar a tecnologia com mais confiança e facilidade.</p>
+      </div>
+
+      <!-- Lista de Dicas -->
+      <div class="dica-card">
+        <h3><i class="bi bi-search me-2"></i>Não achou algo na tela? Use a "Lupa"!</h3>
+        <p>Muitos sites e aplicativos têm um desenho de uma <strong>lupa <i class="bi bi-search"></i></strong>. Clicar nela abre uma caixinha para você escrever o que procura. É muito útil para encontrar informações!</p>
+      </div>
+
+      <div class="dica-card">
+        <h3><i class="bi bi-fonts me-2"></i>Letras pequenas no celular? Aumente o tamanho!</h3>
+        <p>Se as letras do celular estão difíceis de ler, vá em "Configurações" (geralmente um ícone de engrenagem <i class="bi bi-gear-fill"></i>), procure por "Tela" ou "Visor" e depois "Tamanho da Fonte". Você pode deixar as letras maiores e mais confortáveis.</p>
+      </div>
+
+      <div class="dica-card">
+        <h3><i class="bi bi-wifi me-2"></i>Internet lenta? Verifique o Wi-Fi!</h3>
+        <p>Às vezes, a internet fica devagar porque o sinal do Wi-Fi está fraco. Tente chegar mais perto do aparelho do Wi-Fi (roteador). Desligar e ligar o roteador da tomada por 30 segundos também pode ajudar!</p>
+      </div>
+
+      <div class="dica-card">
+        <h3><i class="bi bi-shield-check me-2"></i>Cuidado com senhas: não use a mesma para tudo!</h3>
+        <p>É mais seguro ter uma senha diferente para cada conta importante (banco, e-mail, redes sociais). Anote suas senhas em um caderninho e guarde em local seguro, longe do computador ou celular.</p>
+      </div>
+
+      <div class="dica-card">
+        <h3><i class="bi bi-arrow-clockwise me-2"></i>Página da internet travou? Atualize!</h3>
+        <p>Se uma página da internet não carrega direito ou parece travada, procure por um botão com uma seta em círculo ( <i class="bi bi-arrow-clockwise"></i> ) ou aperte a tecla "F5" no seu teclado. Isso faz a página carregar de novo.</p>
+      </div>
+
+      <div class="dica-card">
+        <h3><i class="bi bi-camera-fill me-2"></i>Tirar "print" da tela do celular</h3>
+        <p>Precisa guardar uma informação que está na tela? Você pode "tirar um print" (uma foto da tela). Em muitos celulares Android, é só apertar o botão de diminuir volume e o botão de ligar/desligar ao mesmo tempo. No iPhone, geralmente é o botão lateral e o de aumentar volume juntos.</p>
+      </div>
+
+      <div class="dica-card">
+        <h3><i class="bi bi-envelope-slash-fill me-2"></i>Recebeu um e-mail estranho? Não clique!</h3>
+        <p>Se receber um e-mail de um desconhecido, ou um e-mail de banco/loja pedindo seus dados ou com links suspeitos, não clique em nada! É melhor apagar. Bancos e empresas sérias não pedem senhas por e-mail.</p>
+      </div>
+
+      <div class="dica-card">
+        <h3><i class="bi bi-brightness-high-fill me-2"></i>Tela muito clara ou escura? Ajuste o brilho!</h3>
+        <p>No celular, deslize o dedo de cima para baixo na tela para abrir as configurações rápidas. Lá você encontrará uma opção para ajustar o brilho da tela, deixando mais confortável para seus olhos.</p>
+      </div>
+
+      <div class="dica-card">
+        <h3><i class="bi bi-telephone-outbound-fill me-2"></i>Ligação de número desconhecido oferecendo prêmios? Desconfie!</h3>
+        <p>Golpistas usam ligações para tentar enganar. Se alguém ligar de um número que você não conhece oferecendo prêmios incríveis ou pedindo seus dados pessoais, desligue. Na dúvida, não forneça nenhuma informação.</p>
+      </div>
+
+      <div class="dica-card">
+        <h3><i class="bi bi-battery-charging me-2"></i>Bateria do celular acabando rápido?</h3>
+        <p>Algumas coisas podem ajudar:</p>
+        <ul>
+            <li>Diminua o brilho da tela.</li>
+            <li>Feche aplicativos que você não está usando.</li>
+            <li>Desligue o Wi-Fi, Bluetooth ou Localização (GPS) se não precisar deles no momento.</li>
+        </ul>
+      </div>
+      
+      <div class="dica-card">
+        <h3><i class="bi bi-question-circle-fill me-2"></i>Não tenha vergonha de perguntar!</h3>
+        <p>A tecnologia pode parecer complicada às vezes. Se tiver dúvidas, peça ajuda a um familiar, amigo ou vizinho que entenda mais. Aprender leva tempo, e todo mundo começa do zero!</p>
+      </div>
+
+      <!-- Seção para mais tutoriais, se aplicável -->
+      <div class="related-tutorials" style="margin-top: 3rem; text-align: center;">
+        <h2>Quer aprender mais?</h2>
+        <p>Confira nossos tutoriais completos passo a passo:</p>
+        <a href="../index.html#tutoriais" class="btn btn-primary btn-lg mt-2">
+            <i class="bi bi-book-half me-2"></i> Ver todos os Tutoriais
+        </a>
+      </div>
+
+    </div>
+  </main>
+
+  <footer>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-4">
+          <div class="logo mb-3">
+            <i class="bi bi-laptop logo-icon" aria-hidden="true"></i>
+            <span style="color: white;">Sênior Web</span>
+          </div>
+          <p style="color: #cbd5e1;">Empoderando pessoas através do conhecimento tecnológico.</p>
+          <div class="social-icons">
+            <a href="#" class="social-icon" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+            <a href="https://www.youtube.com/@S%C3%AAniorWeb1" target="_blank" class="social-icon" aria-label="YouTube"><i class="bi bi-youtube"></i></a>
+            <a href="#" class="social-icon" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+          </div>
+        </div>
+        <div class="col-md-2">
+          <div class="footer-links">
+            <h4>Links</h4>
+            <a href="../index.html">Início</a>
+            <a href="../index.html#tutoriais">Tutoriais</a>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="footer-links">
+            <h4>Contato</h4>
+            <address>
+            Manaus, AM - Brasil<br>
+            </address>
+            <a href="mailto:seniorweb2025@gmail.com"><i class="bi bi-envelope me-2"></i> seniorweb2025@gmail.com</a>
+          </div>
+        </div>
+      </div>
+      <div class="copyright">
+        <p>© 2025 Sênior Web. Todos os direitos reservados.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    // Controles de acessibilidade (igual à página principal)
+    document.getElementById('increaseFont').addEventListener('click', function() {
+      const root = document.documentElement;
+      let currentSize = parseFloat(getComputedStyle(root).fontSize);
+      root.style.fontSize = (currentSize + 1) + 'px';
+    });
+
+    document.getElementById('decreaseFont').addEventListener('click', function() {
+      const root = document.documentElement;
+      let currentSize = parseFloat(getComputedStyle(root).fontSize);
+      if (currentSize > 14) { // Limite mínimo para não ficar ilegível
+        root.style.fontSize = (currentSize - 1) + 'px';
+      }
+    });
+
+    document.getElementById('highContrast').addEventListener('click', function() {
+      document.body.classList.toggle('high-contrast');
+    });
+
+    document.getElementById('resetAccessibility').addEventListener('click', function() {
+      document.documentElement.style.fontSize = '1rem'; // Reset para o valor base do root
+      document.body.classList.remove('high-contrast');
+    });
+
+    // Foco visível para elementos interativos (se houver links/botões específicos na página de dicas)
+    // Como os cards de dicas não são clicáveis como um todo, o foco em links dentro deles já é gerenciado pelo navegador.
+    // Se você adicionar botões ou links que precisam de destaque extra no foco, adicione a lógica aqui.
+
+    // Adiciona aria-live para feedback de acessibilidade
+    const liveRegion = document.createElement('div');
+    liveRegion.setAttribute('aria-live', 'polite');
+    liveRegion.setAttribute('aria-atomic', 'true');
+    liveRegion.style.position = 'absolute';
+    liveRegion.style.left = '-9999px';
+    document.body.appendChild(liveRegion);
+
+    document.querySelectorAll('.accessibility-btn').forEach(button => {
+      button.addEventListener('click', function() {
+        const action = this.getAttribute('aria-label');
+        liveRegion.textContent = `Ação executada: ${action}`;
+        // Pequeno delay para limpar a mensagem e permitir que seja lida novamente se o mesmo botão for clicado
+        setTimeout(() => {
+          liveRegion.textContent = '';
+        }, 1000);
+      });
+    });
+  </script>
+</body>
+
+</html>

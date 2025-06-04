@@ -250,13 +250,15 @@ flex-grow: 1;
 }
 
 .step-image {
-max-width: 60%;
-display: block;
-margin: auto;
-border-radius: 8px;
-margin-top: 1rem;
-box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-border: 1px solid #e2e8f0;
+  max-width: 500px;   /* Permite que a imagem ocupe até 100% da largura do seu contêiner */
+  height: auto;      /* Essencial para manter a proporção da imagem */
+  display: block;    /* Para que margin: auto funcione para centralizar */
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 8px;
+  margin-top: 1rem;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  border: 1px solid #e2e8f0;
 }
 
 .tips-card {

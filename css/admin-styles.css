@@ -1,0 +1,67 @@
+body.admin-page {
+        background-color: #f4f7f6; /* Um fundo ligeiramente diferente para admin */
+    }
+.admin-header {
+    background-color: var(--text-color); /* Usando uma cor escura do tema principal */
+    color: white;
+    padding: 1rem 2rem;
+    margin-bottom: 2rem;
+    border-radius: 0 0 12px 12px;
+}
+.admin-header h1 {
+    margin: 0;
+    font-size: 1.8rem;
+}
+.dashboard-widget {
+    background-color: white;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+.dashboard-widget i {
+    font-size: 2.5rem;
+    color: var(--primary-color);
+    margin-bottom: 0.75rem;
+    display: block;
+}
+.dashboard-widget h3 {
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+    color: var(--text-color);
+}
+.dashboard-widget p {
+    font-size: 0.9rem;
+    color: var(--text-light);
+    margin-bottom: 1rem;
+}
+.btn-admin-action {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+    color: white;
+}
+.btn-admin-action:hover {
+    background-color: var(--accent-color);
+    border-color: var(--accent-color);
+}
+
+body.admin-page {
+        background-color: #f4f7f6;
+    }
+    .admin-header h1 { margin: 0; font-size: 1.8rem; }
+    .page-title-admin {
+        color: var(--primary-color);
+        margin-bottom: 1.5rem;
+        padding-bottom: 0.5rem;
+        border-bottom: 2px solid var(--secondary-color);
+    }
+    .table-responsive { margin-top: 1rem; }
+    .table th { background-color: #e9ecef; }
+    .message-content {
+        max-width: 400px; /* Limita largura da mensagem na tabela */
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
+    .action-buttons button { margin-right: 5px; }

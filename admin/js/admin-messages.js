@@ -39,7 +39,7 @@ document.addEventListener('DOMContentLoaded', () => {
         loadingDiv.style.display = 'block'; // Mostra "Carregando..."
 
         try {
-            const response = await fetch('https://gondola.proxy.rlwy.net/api/contatos', {
+            const response = await fetch('https://senior-web-production.up.railway.app/api/contatos', {
                 headers: {
                     'Authorization': `Bearer ${token}`
                 }

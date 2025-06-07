@@ -17,7 +17,7 @@ Este projeto foi desenvolvido como uma aplicação web full-stack, integrando um
 *   **Formulário de Contato:** Permite que os usuários enviem mensagens, que são armazenadas de forma segura.
 *   **Painel Administrativo:** Uma área segura e protegida por senha para visualizar as mensagens recebidas.
     *   **Tela de Login:** Garante que apenas usuários autorizados acessem a área administrativa.
-    *   **Dashboard de Mensagens:** Exibe todas as mensagens de contato recebidas do banco de dados.
+    *   **Dashboard de Mensagens:** Exibe, visualiza e **permite a exclusão** de todas as mensagens de contato, completando o ciclo de gerenciamento.
 
 ---
 

@@ -1,86 +1,112 @@
+// Este script é responsável por buscar e exibir as mensagens na página messages.html
+
 document.addEventListener('DOMContentLoaded', () => {
-    // Referências globais para elementos do modal e para os dados
-    let messageModalInstance;
-    let allMessages = [];
+    // Pega o token que foi armazenado pela página de login
+    const token = sessionStorage.getItem('adminToken');
 
-    // Função para mostrar a mensagem completa no modal
-    window.showMessage = function(messageId) {
-        if (!messageModalInstance) {
-            const messageModalElement = document.getElementById('messageModal');
-            if (messageModalElement) {
-                messageModalInstance = new bootstrap.Modal(messageModalElement);
+    // Uma verificação de segurança extra. Se o admin-auth.js falhar,
+    // este ainda impede o acesso.
+    if (!token) {
+        console.error("Token de autenticação não encontrado. Redirecionando para login.");
+        window.location.replace('login.html');
+        return;
+    }
+
+    // Se o token existe, chama a função para carregar as mensagens
+    loadMessages(token);
+});
+
+async function loadMessages(authToken) {
+    const loadingDiv = document.getElementById('loading-messages');
+    const errorDiv = document.getElementById('error-messages');
+    const tableContainer = document.getElementById('messages-table-container');
+    const noMessagesP = document.getElementById('no-messages');
+
+    // Mostra o indicador de carregamento
+    loadingDiv.style.display = 'block';
+    errorDiv.style.display = 'none';
+    tableContainer.style.display = 'none';
+    noMessagesP.style.display = 'none';
+
+    try {
+        const apiUrl = 'https://senior-web-production.up.railway.app/api/contatos';
+
+        const response = await fetch(apiUrl, {
+            headers: {
+                'Authorization': `Bearer ${authToken}`
             }
-        }
-        
-        const message = allMessages.find(m => m.id === messageId);
-        if (message) {
-            document.getElementById('modal-name').textContent = message.nome;
-            document.getElementById('modal-email').textContent = message.email;
-            document.getElementById('modal-date').textContent = new Date(message.data_envio).toLocaleString('pt-BR');
-            document.getElementById('modal-message').textContent = message.mensagem;
-            messageModalInstance.show();
-        }
-    };
+        });
 
-    // Função principal para carregar as mensagens
-    async function loadMessages() {
-        const loadingDiv = document.getElementById('loading-messages');
-        const errorDiv = document.getElementById('error-messages');
-        const tableContainer = document.getElementById('messages-table-container');
-        const noMessagesP = document.getElementById('no-messages');
-
-        // Pede a chave de acesso
-        const token = prompt("Por favor, insira a chave de acesso do administrador:");
-        if (!token) {
-            document.body.innerHTML = '<div class="container mt-5"><div class="alert alert-danger">Acesso negado. Chave não fornecida.</div></div>';
+        // Se o token for inválido, o back-end retornará 401 (Não Autorizado)
+        if (response.status === 401) {
+            sessionStorage.removeItem('adminToken'); // Limpa o token inválido
+            alert("Sua chave de acesso é inválida ou expirou. Por favor, faça o login novamente.");
+            window.location.replace('login.html');
             return;
         }
 
-        loadingDiv.style.display = 'block'; // Mostra "Carregando..."
-
-        try {
-            const response = await fetch('https://senior-web-production.up.railway.app/api/contatos', {
-                headers: {
-                    'Authorization': `Bearer ${token}`
-                }
-            });
-
-            if (!response.ok) {
-                throw new Error('Falha na autenticação ou erro no servidor.');
-            }
-
-            allMessages = await response.json(); // Armazena as mensagens globalmente
-
-            const tbody = document.getElementById('messages-tbody');
-            tbody.innerHTML = ''; // Limpa a tabela antes de preencher
-
-            if (allMessages.length === 0) {
-                noMessagesP.style.display = 'block'; // Mostra "Nenhuma mensagem"
-            } else {
-                tableContainer.style.display = 'block'; // Mostra a tabela
-                tbody.innerHTML = allMessages.map(msg => `
-                    <tr>
-                        <td>${msg.id}</td>
-                        <td>${new Date(msg.data_envio).toLocaleString('pt-BR')}</td>
-                        <td>${msg.nome}</td>
-                        <td>${msg.email}</td>
-                        <td>${msg.mensagem.substring(0, 50)}...</td>
-                        <td>
-                            <button class="btn btn-primary btn-sm" onclick="showMessage(${msg.id})">
-                                Ver Completa
-                            </button>
-                        </td>
-                    </tr>
-                `).join('');
-            }
-        } catch (error) {
-            errorDiv.style.display = 'block'; // Mostra a mensagem de erro
-            console.error('Erro ao carregar mensagens:', error);
-        } finally {
-            loadingDiv.style.display = 'none'; // Esconde "Carregando..." no final
+        if (!response.ok) {
+            throw new Error(`Erro do servidor: ${response.statusText}`);
         }
-    }
 
-    // Chama a função principal assim que a página carrega
-    loadMessages();
-});
+        const allMessages = await response.json();
+        const tbody = document.getElementById('messages-tbody');
+        tbody.innerHTML = ''; // Limpa a tabela antes de preencher
+
+        if (allMessages.length === 0) {
+            noMessagesP.style.display = 'block'; // Mostra "Nenhuma mensagem"
+        } else {
+            tableContainer.style.display = 'block'; // Mostra a tabela
+            // Preenche a tabela com os dados
+            tbody.innerHTML = allMessages.map(msg => `
+                <tr>
+                    <td>${msg.id}</td>
+                    <td>${new Date(msg.data_envio).toLocaleString('pt-BR')}</td>
+                    <td>${escapeHtml(msg.nome)}</td>
+                    <td>${escapeHtml(msg.email)}</td>
+                    <td>${escapeHtml(msg.mensagem.substring(0, 50))}...</td>
+                    <td>
+                        <button class="btn btn-primary btn-sm" onclick='showMessage(${JSON.stringify(msg)})'>
+                            Ver Completa
+                        </button>
+                    </td>
+                </tr>
+            `).join('');
+        }
+    } catch (error) {
+        errorDiv.textContent = `Erro ao carregar mensagens: ${error.message}`;
+        errorDiv.style.display = 'block'; // Mostra a mensagem de erro
+        console.error('Falha em loadMessages:', error);
+    } finally {
+        loadingDiv.style.display = 'none'; // Esconde o indicador de carregamento
+    }
+}
+
+// Função para exibir os detalhes da mensagem em um modal do Bootstrap
+// Ela é chamada pelo 'onclick' no botão da tabela
+function showMessage(message) {
+    // Inicializa a instância do modal do Bootstrap
+    const messageModal = new bootstrap.Modal(document.getElementById('messageModal'));
+
+    if (message) {
+        document.getElementById('modal-name').textContent = message.nome;
+        document.getElementById('modal-email').textContent = message.email;
+        document.getElementById('modal-date').textContent = new Date(message.data_envio).toLocaleString('pt-BR');
+        document.getElementById('modal-message').textContent = message.mensagem;
+        messageModal.show();
+    }
+}
+
+// Função de segurança para evitar ataques de XSS (Cross-Site Scripting)
+// ao inserir dados do usuário no HTML.
+function escapeHtml(unsafe) {
+    if (typeof unsafe !== 'string') {
+        return '';
+    }
+    return unsafe
+         .replace(/&/g, "&")
+         .replace(/</g, "<")
+         .replace(/>/g, ">")
+         .replace(/"/g, "'")
+         .replace(/'/g, "'"); // Usando o código da entidade para consistência
+}

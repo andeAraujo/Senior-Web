@@ -64,6 +64,20 @@ app.post('/api/contato', async (req, res) => {
     }
 });
 
+// --- Rota de Login ---
+app.post('/api/login', (req, res) => {
+    const { token } = req.body;
+
+    // Compara o token enviado com o token seguro no ambiente
+    if (token && token === process.env.ADMIN_TOKEN) {
+        // Se for correto, responde com sucesso.
+        res.status(200).json({ success: true, message: 'Autenticação bem-sucedida.' });
+    } else {
+        // Se for incorreto, responde com erro de não autorizado.
+        res.status(401).json({ success: false, message: 'Chave de acesso inválida.' });
+    }
+});
+
 // --- Rota do Painel Admin ---
 app.get('/api/contatos', async (req, res) => {
     const authHeader = req.headers.authorization;

@@ -1,6 +1,16 @@
 // Este script é responsável por buscar e exibir as mensagens na página messages.html
 
 document.addEventListener('DOMContentLoaded', () => {
+    // lógica para logout
+    const logoutButton = document.getElementById('logoutButton');
+    if (logoutButton) {
+        logoutButton.addEventListener('click', () => {
+            sessionStorage.removeItem('adminToken');
+            alert('Você foi desconectado com sucesso.');
+            window.location.replace('login.html');
+        });
+    }
+
     // Pega o token que foi armazenado pela página de login
     const token = sessionStorage.getItem('adminToken');
 

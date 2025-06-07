@@ -93,6 +93,33 @@ app.get('/api/contatos', async (req, res) => {
     }
 });
 
+// --- Rota para DELETAR uma Mensagem ---
+app.delete('/api/contatos/:id', async (req, res) => {
+    // 1. Primeiro, verifica se quem está pedindo é um admin
+    const authHeader = req.headers.authorization;
+    if (authHeader !== `Bearer ${process.env.ADMIN_TOKEN}`) {
+        return res.status(401).json({ error: 'Acesso não autorizado.' });
+    }
+
+    try {
+        // 2. Pega o ID da mensagem dos parâmetros da URL
+        const { id } = req.params;
+
+        // 3. Executa a query SQL para deletar a linha com o ID correspondente
+        const [result] = await pool.query('DELETE FROM contatos WHERE id = ?', [id]);
+
+        // 4. Verifica se alguma linha foi realmente deletada
+        if (result.affectedRows > 0) {
+            res.status(200).json({ success: true, message: 'Mensagem deletada com sucesso.' });
+        } else {
+            res.status(404).json({ error: 'Mensagem não encontrada.' });
+        }
+    } catch (error) {
+        console.error('Erro na rota DELETE /api/contatos/:id:', error);
+        res.status(500).json({ error: 'Erro interno do servidor ao deletar mensagem.' });
+    }
+});
+
 // --- Iniciar Servidor ---
 const PORT = process.env.PORT || 3001;
 app.listen(PORT, () => {

@@ -75,9 +75,12 @@ async function loadMessages(authToken) {
                     <td>${escapeHtml(msg.nome)}</td>
                     <td>${escapeHtml(msg.email)}</td>
                     <td>${escapeHtml(msg.mensagem.substring(0, 50))}...</td>
-                    <td>
-                        <button class="btn btn-primary btn-sm" onclick='showMessage(${JSON.stringify(msg)})'>
-                            Ver Completa
+                    <td class="text-nowrap">
+                        <button class="btn btn-primary btn-sm me-2" onclick='showMessage(${JSON.stringify(msg)})'>
+                            Ver
+                        </button>
+                        <button class="btn btn-danger btn-sm" onclick='deleteMessage(${msg.id}, this)'>
+                            Excluir
                         </button>
                     </td>
                 </tr>
@@ -107,6 +110,58 @@ function showMessage(message) {
     }
 }
 
+// --- Função para DELETAR uma Mensagem ---
+async function deleteMessage(messageId, buttonElement) {
+    // 1. Pede confirmação ao usuário para evitar cliques acidentais
+    if (!confirm(`Tem certeza que deseja excluir a mensagem #${messageId}? Esta ação não pode ser desfeita.`)) {
+        return; // Se o usuário clicar em "Cancelar", a função para aqui.
+    }
+
+    // 2. Pega o token de autenticação que já está guardado
+    const authToken = sessionStorage.getItem('adminToken');
+    if (!authToken) {
+        alert('Erro de autenticação. Por favor, faça o login novamente.');
+        window.location.replace('login.html');
+        return;
+    }
+    
+    // Feedback visual: desabilita o botão e mostra "Excluindo..."
+    buttonElement.disabled = true;
+    buttonElement.innerHTML = '<span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>';
+
+
+    try {
+        // 3. Monta a URL correta para a API, incluindo o ID da mensagem
+        const apiUrl = `https://senior-web-production.up.railway.app/api/contatos/${messageId}`;
+
+        // 4. Envia a requisição DELETE para o servidor
+        const response = await fetch(apiUrl, {
+            method: 'DELETE',
+            headers: {
+                'Authorization': `Bearer ${authToken}`
+            }
+        });
+
+        if (response.ok) {
+            // 5. Se a exclusão foi um sucesso, remove a linha da tabela da tela
+            // O `buttonElement` ajuda a encontrar a linha pai (`<tr>`) para remover
+            const rowToRemove = buttonElement.closest('tr');
+            rowToRemove.remove();
+            alert(`Mensagem #${messageId} deletada com sucesso.`);
+        } else {
+            // Se o servidor retornou um erro
+            const errorData = await response.json();
+            throw new Error(errorData.error || 'Falha ao deletar a mensagem.');
+        }
+
+    } catch (error) {
+        alert(`Erro: ${error.message}`);
+        // Reabilita o botão em caso de erro
+        buttonElement.disabled = false;
+        buttonElement.innerHTML = 'Excluir';
+    }
+}
+
 // Função de segurança para evitar ataques de XSS (Cross-Site Scripting)
 // ao inserir dados do usuário no HTML.
 function escapeHtml(unsafe) {
@@ -114,9 +169,9 @@ function escapeHtml(unsafe) {
         return '';
     }
     return unsafe
-         .replace(/&/g, "&")
-         .replace(/</g, "<")
-         .replace(/>/g, ">")
-         .replace(/"/g, "'")
-         .replace(/'/g, "'"); // Usando o código da entidade para consistência
+         .replace(/&/g, "&amp;")
+         .replace(/</g, "&lt;")
+         .replace(/>/g, "&gt;")
+         .replace(/"/g, "&quot;")
+         .replace(/'/g, "&#039;");
 }

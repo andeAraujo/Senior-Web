@@ -4,7 +4,9 @@
 
 ## 📖 Sobre o Projeto
 
-O **Sênior Web** é um portal educacional desenvolvido para facilitar o acesso de idosos à tecnologia. O projeto tem como objetivo principal oferecer um ambiente amigável, seguro e acessível, com tutoriais simplificados sobre o uso de celulares, internet e aplicativos, capacitando o público sênior a se conectar com o mundo digital de forma independente e segura.
+O **Sênior Web** é um portal educacional desenvolvido para o Projeto Interdisciplinar nas disciplinas de Banco de Dados II, Programação Web II e Projetos de Sistemas da faculdade.
+
+O projeto tem como objetivo principal oferecer um ambiente amigável, seguro e acessível, com tutoriais simplificados sobre o uso de celulares, internet e aplicativos, capacitando o público sênior a se conectar com o mundo digital de forma independente e segura.
 
 Este projeto foi desenvolvido como uma aplicação web full-stack, integrando um front-end estático com um back-end dinâmico e um banco de dados relacional.
 

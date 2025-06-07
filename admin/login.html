@@ -63,6 +63,7 @@
                     // Se o back-end disse que a senha está errada...
                     errorMessage.textContent = 'Chave de acesso inválida.';
                     errorMessage.style.display = 'block';
+                    tokenInput.value = '';
                 }
 
             } catch (error) {
